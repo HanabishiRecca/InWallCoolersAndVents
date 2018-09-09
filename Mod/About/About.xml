@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>In-wall coolers and vents [B19]</name>
+	<author>Hanabishi</author>
+	<targetVersion>0.19.2009</targetVersion>
+	<description>Mod allows to place coolers and vents inside the walls.
+If you hate when raiders easily breaks your rooms (especially fridges) this mod is for you =)
+
+[Installation] Compatible with existing saves. Just place additional walls in coolers and vents positions to stop the air get through.
+
+[Uninstallation] All coolers and vents placed on the walls will be disassembled into components.</description>
+</ModMetaData>
