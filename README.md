@@ -10,3 +10,10 @@ If you hate when raiders easily breaks your rooms (especially fridges) this mod 
 **[Download](https://github.com/HanabishiRecca/InWallCoolersAndVents/releases)**
 
 **[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1503448404)**
+
+---
+
+# Building from source
+1. Place **Assembly-CSharp.dll** from **RimWorld\RimWorldWin64_Data\Managed** into the project root directory.
+2. Compile project, **Mod\Assemblies\InwallCoolersAndVents.dll** will be created.
+3. Now you can grab **Mod** folder.
