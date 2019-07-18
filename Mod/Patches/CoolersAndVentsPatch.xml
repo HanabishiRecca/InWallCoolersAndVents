@@ -1,80 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <Operation Class="PatchOperationReplace">
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/altitudeLayer</xpath>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/altitudeLayer</xpath>
         <value>
             <altitudeLayer>PawnUnused</altitudeLayer>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/fillPercent</xpath>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/fillPercent</xpath>
         <value>
             <fillPercent>0.99</fillPercent>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/terrainAffordanceNeeded</xpath>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/terrainAffordanceNeeded</xpath>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/placeWorkers</xpath>
-        <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/placeWorkers</xpath>
-            <value>
-                <li>PlaceWorker_WallRestriction</li>
-            </value>
-        </match>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/placeWorkers</xpath>
+        <value>
+            <li>PlaceWorker_WallRestriction</li>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/building</xpath>
-        <match Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/building</xpath>
-            <value>
-                <isEdifice>false</isEdifice>
-            </value>
-        </match>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/building</xpath>
+        <value>
+            <isEdifice>false</isEdifice>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/clearBuildingArea</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
-            <value>
-                <clearBuildingArea>false</clearBuildingArea>
-            </value>
-        </nomatch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
+        <value>
+            <clearBuildingArea>false</clearBuildingArea>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/minifiedDef</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
-            <value>
-                <minifiedDef>MinifiedThing</minifiedDef>
-            </value>
-        </nomatch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
+        <value>
+            <minifiedDef>MinifiedThing</minifiedDef>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/thingCategories</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
-            <value>
-                <thingCategories>
-                    <li>BuildingsTemperature</li>
-                </thingCategories>
-            </value>
-        </nomatch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
+        <value>
+            <thingCategories>
+                <li>BuildingsTemperature</li>
+            </thingCategories>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationConditional">
-        <success>Always</success>
-        <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/statBases/Mass</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName = "Cooler" or defName = "Vent"]/statBases</xpath>
-            <value>
-                <Mass>6</Mass>
-            </value>
-        </nomatch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/statBases</xpath>
+        <value>
+            <Mass>6</Mass>
+        </value>
     </Operation>
 </Patch>
