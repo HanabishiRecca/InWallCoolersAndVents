@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/altitudeLayer</xpath>
-	  <value>
-        <altitudeLayer>PawnUnused</altitudeLayer>
-      </value>
-	</Operation>
     <Operation Class="PatchOperationReplace">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/fillPercent</xpath>
-	  <value>
-        <fillPercent>0.99</fillPercent>
-      </value>
-	</Operation>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/altitudeLayer</xpath>
+        <value>
+            <altitudeLayer>PawnUnused</altitudeLayer>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/fillPercent</xpath>
+        <value>
+            <fillPercent>0.99</fillPercent>
+        </value>
+    </Operation>
     <Operation Class="PatchOperationRemove">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/terrainAffordanceNeeded</xpath>
-	</Operation>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/terrainAffordanceNeeded</xpath>
+    </Operation>
     <Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/placeWorkers</xpath>
-	  <value>
-        <li>PlaceWorker_WallRestriction</li>
-      </value>
-	</Operation>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/placeWorkers</xpath>
+        <value>
+            <li>PlaceWorker_WallRestriction</li>
+        </value>
+    </Operation>
     <Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/building</xpath>
-	  <value>
-        <isEdifice>false</isEdifice>
-      </value>
-	</Operation>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]/building</xpath>
+        <value>
+            <isEdifice>false</isEdifice>
+        </value>
+    </Operation>
     <Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
-	  <value>
-        <clearBuildingArea>false</clearBuildingArea>
-      </value>
-	</Operation>
+        <xpath>*/ThingDef[defName = "Cooler" or defName = "Vent"]</xpath>
+        <value>
+            <clearBuildingArea>false</clearBuildingArea>
+            <!--
+                1.5 throws "impassable, player-buildable building that can be shot/seen over".
+                There is no way to fix it properly, as on-wall stuff can't be edifice, thus can't have fillPercent = 1.0.
+                So we simply ignore the error.
+            -->
+            <ignoreConfigErrors>true</ignoreConfigErrors>
+        </value>
+    </Operation>
 </Patch>
